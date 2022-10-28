@@ -19,6 +19,7 @@ app.get("/", (req,res) =>
 app.get("/notes", (req,res) =>
     res.sendFile(path.join(__dirname, 'public/notes.html')));
 
+
 app.get("/api/notes", (req,res) =>
     {
         fs.readFile(path.join(__dirname,'db/db.json'), 'utf-8', (err,data)=>{
@@ -35,6 +36,8 @@ app.get("/api/notes", (req,res) =>
         })
     }
 )
+
+
 
 app.post("/api/notes", (req,res) => {
     let note = req.body;
